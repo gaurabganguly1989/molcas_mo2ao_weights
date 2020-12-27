@@ -13,15 +13,15 @@ python molcas_ao_weights.py -h
 
 Examples are provided in the Example folder of the base directory.
 
-Example:
-========
+### Example:
+------------
 Molecule: UF6. Calculations are done in three different point groups 
-D2h, Ci, and C1 (NoSym). The metal-ceneterd (with high 5f character) 
-orbitals are analyzed from DFT (PBE) calculation using .ScfOrb file. 
-AO composition wt.% are found to be invarient to the symmetry point 
-group used in the calculation. 
+*D*<sub>2*h*</sub>, *C*<sub>*i*</sub>, and *C*<sub>1</sub> (NoSym). The
+metal-ceneterd (with high 5f character) orbitals are analyzed from DFT (PBE) 
+calculation using .ScfOrb file. AO composition wt.% are found to be invarient to 
+the symmetry point group used in the calculation. 
 
-Look for Sym-{*}-Index-{*}.out files in the `sub-folders` under `Example` folder:
+Look for Sym-{}-Index-{}.out files in the `sub-folders` under `Example` folder:
 
 Wt.% to match from the `molcas_ao_weights.py` run, among different 
 point group symmetries. *a*<sub>2*u*</sub> and *t*<sub>1*u*</sub> (in
