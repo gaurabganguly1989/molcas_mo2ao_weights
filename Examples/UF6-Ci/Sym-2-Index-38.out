@@ -1,0 +1,36 @@
+ 
+           M U L L I K E N  A N A L Y S I S
+                          of 
+    Molecular Orbital in terms of Atomic Orbital wt.%
+ 
+For questions/suggestions contact Gaurab Ganguly
+                                  gaurabganguly1989@gmail.com
+ 
+Molecular Orbital of interest:
+------------------------------
+Symmetry label= 2 , Index= 38
+ 
+Files from Molcas/OpenMolcas Calculation:
+-----------------------------------------
+Seward file   : uf6-seward-dft.out
+Orbital file  : uf6.ScfOrb
+HDF5 file     : uf6.guessorb.h5
+ 
+ 
+                 POINT GROUP = Ci
+-------------------------------------------------------------
+Symm. label      Irrep.       No. of MOs
+-------------------------------------------------------------
+          1      ag                  60
+          2      au                  69
+-------------------------------------------------------------
+
+Mulliken Analysis of:
+n-th ('n = 38') MO in 'au' Symmetry (symm. label = '2').
+All AO function with > 1.0% weight in the MO is printed.
+-------------------------------------------------------------
+AO-func.          wt.%  
+-------------------------------------------------------------
+U-5f2-           99.8%
+-------------------------------------------------------------
+

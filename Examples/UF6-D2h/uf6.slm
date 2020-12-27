@@ -1,0 +1,79 @@
+#!/bin/bash
+#SBATCH --time=10:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --cluster=faculty
+#SBATCH --partition=jochena
+#SBATCH --qos=jochena
+#SBATCH --account=jochena
+#SBATCH --mem=70000
+#SBATCH --job-name=uf6.slm
+#SBATCH --output=uf6.out
+#SBATCH --mail-type=END
+
+cd $SLURMTMPDIR
+
+pwd
+
+####################### export ######################
+export Project=uf6
+export HomeDir=$SLURM_SUBMIT_DIR
+export WorkDir=$SLURMTMPDIR
+export StocDir=/gpfs/scratch/gaurabga/TEST/UF6-D2h
+export MOLCAS_WORKDIR=$SLURMTMPDIR
+export MOLCAS=/projects/academic/jochena/gaurabga/Molcas/OpenMolcas/build
+export MOLCAS_MOLDEN='ON'
+export MOLCAS_CPUS=1
+export MOLCAS_MEM=55000
+export MOLCAS_DISK=3000
+export MOLCAS_PRINT=2
+######################################################
+
+#################### modules #########################
+module purge
+module load cmake/3.6.1
+module load python/anaconda
+source activate py36
+module load mkl/2017.0.1
+module load hdf5/1.10.1
+######################################################
+
+echo "start up"
+echo "HOME=$HOME"
+echo "HOSTNAME=$HOSTNAME"
+
+echo "SLURM_JOB_NODELIST"=$SLURM_JOB_NODELIST
+echo "SLURM_NNODES"=$SLURM_NNODES
+
+export PBS_NODEFILE=nodelist.$$
+srun --nodes=${SLURM_NNODES} bash -c 'hostname' > $PBS_NODEFILE
+cat $PBS_NODEFILE
+
+mkdir -p $StocDir
+
+PATH=$PATH:.
+
+cd $WorkDir
+
+cp $StocDir/* ./
+## ls -la
+
+###################### run molcas ######################
+
+pymolcas  $HomeDir/$Project.com >  $HomeDir/${Project}-seward-dft.out
+
+##################### copy #############################
+## ls -la
+cp *cube $SLURM_SUBMIT_DIR/.
+cp * $StocDir
+cp *.ScfOrb $SLURM_SUBMIT_DIR 
+cp *.RasOrb $SLURM_SUBMIT_DIR
+cp *.txt $SLURM_SUBMIT_DIR 
+cp *.JobIph $SLURM_SUBMIT_DIR 
+cp *.molden $SLURM_SUBMIT_DIR 
+#rm $SLURM_SUBMIT_DIR/*h5
+exit
+#######################################################
+
+
+
