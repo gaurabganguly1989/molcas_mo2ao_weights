@@ -24,15 +24,12 @@ group used in the calculation.
 Look for Sym-{*}-Index-{*}.out files in the `sub-folders` under `Example` folder:
 
 Wt.% to match from the `molcas_ao_weights.py` run, among different 
-point group symmetries. $a_{2u}$ and $t_{1u}$ (in $O_h$) orbitals are analyzed.
+point group symmetries. a<sub>2u</sub> and t<sub>1u</sub> (in O<sub>h</sub>) orbitals are analyzed.
 They show same AO wt% given below:
 
-|                                                    | UF6(D2h)           | UF6(Ci)            |    UF6(C1)          |            
-|----------------------------------------------------|--------------------|--------------------|---------------------|
-| $a_{2u}$ (99.8% U-5f0)                             | Sym-5-Index-02.out | Sym-2-Index-38.out | Sym-1-Index-74.out  |
-| $t_{1u}$:(74% U-5$f_0$, 2% U-6$f_0$, 23% F-2$p_z$) | Sym-7-Index-14.out | Sym-2-Index-43.out | Sym-1-Index-79.out  |
-
-
-
+|                                                         | UF6(D2h)           | UF6(Ci)            |    UF6(C1)          |            
+|---------------------------------------------------------|--------------------|--------------------|---------------------|
+| *a*<sub>2*u*</sub>: (99.8% U-5f0)                       | Sym-5-Index-02.out | Sym-2-Index-38.out | Sym-1-Index-74.out  |
+| *t*<sub>1*u*</sub>: (74% U-5f_0, 2% U-6f_0, 23% F-2p_z) | Sym-7-Index-14.out | Sym-2-Index-43.out | Sym-1-Index-79.out  |
 
 
